@@ -1,0 +1,12 @@
+services: #Déclaration des différents services qui seront exécutés
+  nginx:
+    image: nginx:latest #Nous allons chercher la dernière version de nginx existante
+    container_name: gateway #Nous nommons le container
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf #Affectation du fichier de config personnalisé
+    ports:
+      - "8080:8080" #Nous exposerons sur le port 8080
+    networks:
+      - app-network #Nous encapsulons nos services dans un seul et même réseau
+    depends_on: #Dépendance du service NGINX
+    #Pour l’instant aucune vous verrez ça après
