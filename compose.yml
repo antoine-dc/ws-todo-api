@@ -9,4 +9,26 @@ services: #Déclaration des différents services qui seront exécutés
     networks:
       - app-network #Nous encapsulons nos services dans un seul et même réseau
     depends_on: #Dépendance du service NGINX
-    #Pour l’instant aucune vous verrez ça après
+      - auth
+
+  auth:
+    build: auth
+    container_name: auth-service
+    networks:
+      - app-network
+
+  # public:
+  #   build: public
+  #   container_name: public-service
+  #   networks:
+  #     - app-network
+
+  # private:
+  #   build: private
+  #   container_name: private-service
+  #   networks:
+  #     - app-network
+
+networks:
+  app-network:
+    driver: bridge
