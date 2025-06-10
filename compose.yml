@@ -17,17 +17,17 @@ services: #Déclaration des différents services qui seront exécutés
     networks:
       - app-network
 
-  # public:
-  #   build: public
-  #   container_name: public-service
-  #   networks:
-  #     - app-network
+  public:
+    build: public
+    container_name: public-service
+    networks:
+      - app-network
 
-  # private:
-  #   build: private
-  #   container_name: private-service
-  #   networks:
-  #     - app-network
+  private:
+    build: private
+    container_name: private-service
+    networks:
+      - app-network
 
 networks:
   app-network:

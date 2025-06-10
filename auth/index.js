@@ -18,4 +18,4 @@ app.use(express.urlencoded({ extended: true }));
 
 require("dotenv").config();
 
-require("./routes/auth.routes")(app);
+require("./src/routes/auth.routes")(app);
